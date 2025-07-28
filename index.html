@@ -3,32 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flappy Bird</title>
+    <title>Flappy Bird with Face Replacement</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="game-container">
-        <h1 class="game-title">Flappy Bird</h1>
-        <div class="canvas-container">
-            <canvas id="gameCanvas" width="320" height="480"></canvas>
-            <div id="startScreen" class="screen start-screen">
-                <div class="instructions">
-                    <p>Press SPACE or CLICK to start</p>
-                </div>
+        <div class="controls">
+            <h1>Flappy Bird - Face Edition</h1>
+            <div class="face-selector">
+                <label for="facePicker">Choose your face:</label>
+                <input id="facePicker" type="file" accept="image/*" />
+                <button id="useWebcam">Use Webcam</button>
             </div>
-            <div id="gameOverScreen" class="screen game-over-screen hidden">
-                <div class="game-over-content">
-                    <h2>Game Over</h2>
-                    <div class="scores">
-                        <p>Score: <span id="finalScore">0</span></p>
-                        <p>Best: <span id="bestScore">0</span></p>
-                    </div>
-                    <button id="restartBtn" class="btn btn--primary">Play Again</button>
-                </div>
+            <div class="instructions">
+                <p>Press SPACE or click to jump!</p>
+                <p>Score: <span id="score">0</span> | Best: <span id="bestScore">0</span></p>
             </div>
         </div>
-        <div id="scoreDisplay" class="score-display hidden">
-            <span id="currentScore">0</span>
+        <canvas id="gameCanvas" width="288" height="512"></canvas>
+        <div class="game-over" id="gameOver" style="display: none;">
+            <h2>Game Over!</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <button id="restartBtn">Play Again</button>
         </div>
     </div>
     <script src="app.js"></script>
